@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 mx-auto">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">
+                    <i class="fas fa-user-plus"></i> Agregar Nuevo Usuario
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('agregar_usuario') }}">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">
+                            <i class="fas fa-user"></i> Nombre Completo
+                        </label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="nombre" 
+                               name="nombre" 
+                               placeholder="Ej: Juan Pérez"
+                               required>
+                        <div class="form-text">Ingresa el nombre completo del usuario.</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i> Correo Electrónico
+                        </label>
+                        <input type="email" 
+                               class="form-control" 
+                               id="email" 
+                               name="email" 
+                               placeholder="Ej: usuario@ejemplo.com"
+                               required>
+                        <div class="form-text">Ingresa una dirección de correo válida.</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('lista_usuarios') }}" class="btn btn-outline-secondary me-md-2">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Agregar Usuario
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Información adicional -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-lightbulb"></i> Consejos para Agregar Usuarios
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-check-circle text-success"></i> Datos Requeridos:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-dot-circle text-primary"></i> Nombre completo</li>
+                            <li><i class="fas fa-dot-circle text-primary"></i> Correo electrónico válido</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-info-circle text-info"></i> Información:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-dot-circle text-secondary"></i> El ID se asigna automáticamente</li>
+                            <li><i class="fas fa-dot-circle text-secondary"></i> Los datos se validan antes de guardar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

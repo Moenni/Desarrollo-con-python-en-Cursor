@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="jumbotron bg-primary text-white rounded p-5 mb-4">
+            <h1 class="display-4">
+                <i class="fas fa-flask"></i> ¡Bienvenido a mi App Flask!
+            </h1>
+            <p class="lead">Una aplicación web simple desarrollada con Flask para demostrar las funcionalidades básicas.</p>
+            <hr class="my-4">
+            <p>Esta aplicación incluye gestión de usuarios, API REST y una interfaz moderna con Bootstrap.</p>
+            <a class="btn btn-light btn-lg" href="{{ url_for('lista_usuarios') }}" role="button">
+                <i class="fas fa-users"></i> Ver Usuarios
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Gestión de Usuarios</h5>
+                <p class="card-text">Visualiza, agrega y gestiona usuarios de manera sencilla.</p>
+                <a href="{{ url_for('lista_usuarios') }}" class="btn btn-primary">
+                    <i class="fas fa-eye"></i> Ver Lista
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-user-plus fa-3x text-success mb-3"></i>
+                <h5 class="card-title">Agregar Usuario</h5>
+                <p class="card-text">Añade nuevos usuarios al sistema de forma rápida.</p>
+                <a href="{{ url_for('agregar_usuario') }}" class="btn btn-success">
+                    <i class="fas fa-plus"></i> Agregar
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-code fa-3x text-info mb-3"></i>
+                <h5 class="card-title">API REST</h5>
+                <p class="card-text">Accede a los datos a través de endpoints JSON.</p>
+                <a href="{{ url_for('api_usuarios') }}" class="btn btn-info" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Ver API
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-info-circle"></i> Características de la Aplicación
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-check text-success"></i> Funcionalidades:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-dot-circle text-primary"></i> Interfaz responsive con Bootstrap</li>
+                            <li><i class="fas fa-dot-circle text-primary"></i> Gestión CRUD de usuarios</li>
+                            <li><i class="fas fa-dot-circle text-primary"></i> API REST con endpoints JSON</li>
+                            <li><i class="fas fa-dot-circle text-primary"></i> Mensajes flash para feedback</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><i class="fas fa-cog text-info"></i> Tecnologías:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-dot-circle text-secondary"></i> Flask (Python)</li>
+                            <li><i class="fas fa-dot-circle text-secondary"></i> Bootstrap 5</li>
+                            <li><i class="fas fa-dot-circle text-secondary"></i> Font Awesome</i></li>
+                            <li><i class="fas fa-dot-circle text-secondary"></i> Jinja2 Templates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
